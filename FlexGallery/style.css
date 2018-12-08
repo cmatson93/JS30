@@ -1,0 +1,40 @@
+.pannels {
+    display: flex;
+}
+
+.pannel {
+    border: 2px solid black;
+    height: 100vh;
+    flex: 1;
+    text-align: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+     transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+}
+
+.pannel > * {
+    display: flex;
+    justify-content: center;
+     flex: 1 0 auto;
+     border: solid 0.5px red;
+     align-items: center;
+     transition:transform 0.5s;
+}
+
+.pannel > *:first-child {
+    transform: translateY(-100%);
+}
+.pannel.open > *:first-child {
+    transform: translateY(0);
+}
+
+.pannel > *:last-child {
+    transform: translateY(100%)
+}
+.pannel.open > *:last-child {
+    transform: translateY(0)
+}
